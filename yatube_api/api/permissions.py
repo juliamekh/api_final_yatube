@@ -2,7 +2,7 @@ from rest_framework import permissions
 from rest_framework.exceptions import PermissionDenied
 
 
-class IsAuthorOrReadOnly(permissions.BasePermission):
+class OnlyAuthor(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
@@ -10,7 +10,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
         return obj.author == request.user
 
 
-class GroupAccessOnlyGet(permissions.BasePermission):
+class GroupOnlyGet(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
