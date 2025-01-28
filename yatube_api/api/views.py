@@ -3,7 +3,7 @@ from rest_framework import mixins, filters
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from posts.models import Post, Group
-from .permissions import OnlyAuthor, GroupOnlyGet
+from .permissions import GroupOnlyGet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .serializers import (
